@@ -1,8 +1,12 @@
-var length = 16; //Number
-var lastName = "Johnson"; //String
+var length = 16; // Number
+var lastName = "Johnson"; // String
 
-var x = {firstName: "John", lastName: "Doe"}; //Object
-var x = 16 + "Volvo";
+//# in java
+// private int length = 16;
+// private String lastName = "Johnson";
+
+var x = { firstName: "John", lastName: "Doe" }; // Object
+// var x = 16 + "Volvo";
 console.log(x);
 
 var y = "16" + "Volvo";

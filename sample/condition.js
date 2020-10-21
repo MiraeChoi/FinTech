@@ -1,8 +1,6 @@
-var hour = 13;
+var hour = 20;
 var greeting = "Good Morning";
-
-if(hour > 12 || hour < 6) {
-    greeting = "Good Day";
+if (hour < 18) {
+  greeting = "Good day";
 }
-
 console.log(greeting);
