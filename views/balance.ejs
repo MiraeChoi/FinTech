@@ -7,16 +7,20 @@
       content="width=device-width, initial-scale=1, user-scalable=0"
     />
     <title>Crypto Mobile Template</title>
+
     <!-- Google font file. If you want you can change. -->
     <link
       href="https://fonts.googleapis.com/css?family=Nunito:400,600,700,900"
       rel="stylesheet"
     />
+
     <!-- Fontawesome font file css -->
     <link rel="stylesheet" type="text/css" href="css/font-awesome.min.css" />
+
     <!-- Template global css file. Requared all pages -->
     <link rel="stylesheet" type="text/css" href="css/global.style.css" />
   </head>
+
   <body>
     <div class="wrapper">
       <div class="nav-menu">
@@ -73,7 +77,7 @@
                   >
                 </a>
               </li>
-              <li class="active">
+              <li>
                 <a href="javascript:void(0);"
                   ><img src="img/content/icons/9.png" alt="" /><strong
                     >Login/Register</strong
@@ -82,9 +86,7 @@
                 ></a>
                 <ul>
                   <li><a href="login.html" data-loader="show">Login</a></li>
-                  <li class="active">
-                    <a href="signup.html" data-loader="show">Register</a>
-                  </li>
+                  <li><a href="signup.html" data-loader="show">Register</a></li>
                   <li>
                     <a href="forgot-password.html" data-loader="show"
                       >Forgot Password</a
@@ -92,6 +94,7 @@
                   </li>
                 </ul>
               </li>
+
               <li>
                 <a href="javascript:void(0);"
                   ><img src="img/content/icons/8.png" alt="" />
@@ -161,7 +164,7 @@
                   </li>
                 </ul>
               </li>
-              <li>
+              <li class="active">
                 <a href="#"
                   ><img src="img/content/icons/15.png" alt="" /><strong>
                     Pages</strong
@@ -178,7 +181,7 @@
                     >
                   </li>
                   <li><a href="contact.html" data-loader="show">Contact</a></li>
-                  <li>
+                  <li class="active">
                     <a href="blank.html" data-loader="show">Blank Page</a>
                   </li>
                 </ul>
@@ -195,7 +198,7 @@
           <a class="go-back-link" href="javascript:history.back();"
             ><i class="fa fa-arrow-left"></i
           ></a>
-          <h1 class="page-title">SIGN UP</h1>
+          <h1 class="page-title">BLANK</h1>
           <div class="navi-menu-button">
             <em></em>
             <em></em>
@@ -206,92 +209,38 @@
         <!-- Page content start -->
         <main>
           <div class="container">
-            <div class="form-divider"></div>
-            <div class="form-divider"></div>
-            <div class="form-label-divider"><span>OR</span></div>
-            <div class="form-divider"></div>
-            <div class="form-row-group with-icons">
-              <div class="form-row no-padding">
-                <i class="fa fa-user"></i>
-                <input
-                  type="text"
-                  id="userName"
-                  class="form-element"
-                  placeholder="Username"
-                  value=""
-                />
-              </div>
-              <div class="form-row no-padding">
-                <i class="fa fa-envelope"></i>
-                <input
-                  type="email"
-                  id="userEmail"
-                  class="form-element"
-                  placeholder="Email"
-                  value=""
-                />
-              </div>
-              <div class="form-row no-padding">
-                <i class="fa fa-lock"></i>
-                <input
-                  type="password"
-                  id="userPassword"
-                  class="form-element"
-                  placeholder="Password"
-                  value=""
-                />
-              </div>
-              <div class="form-row no-padding">
-                <i class="fa fa-user"></i>
-                <input
-                  type="text"
-                  id="userAccessToken"
-                  class="form-element"
-                  placeholder="accessToken"
-                  value=""
-                />
-              </div>
-              <div class="form-row no-padding">
-                <i class="fa fa-user"></i>
-                <input
-                  type="text"
-                  id="userRefreshToken"
-                  class="form-element"
-                  placeholder="refreshToken"
-                  value=""
-                />
-              </div>
-              <div class="form-row no-padding">
-                <i class="fa fa-user"></i>
-                <input
-                  type="text"
-                  id="userSeqNo"
-                  class="form-element"
-                  placeholder="userseqno"
-                  value=""
-                />
-              </div>
+            <div id="balanceText">
+              <h1 id="balanceAmount"></h1>
             </div>
-            <div class="form-divider"></div>
-            <div class="form-row">
-              <button id="authBtn" class="button circle block blue mb-15">
-                <i class="fa fa-user"></i> 인증 받기
-              </button>
-            </div>
-            <div class="form-row">
-              <button id="signupBtn" class="button circle block orange">
-                Sign Up
-              </button>
-            </div>
-            <div class="form-row txt-center mt-15">
-              Already have an account?
-              <a href="login.html" data-loader="show">Login</a>
-            </div>
+            <div id="transactionList" style="width: 100%"></div>
           </div>
+
+          <div class="form-divider"></div>
+
+          <footer>
+            <div class="container">
+              <ul>
+                <li>
+                  <a href="#"><i class="fa fa-facebook"></i></a>
+                </li>
+                <li>
+                  <a href="#"><i class="fa fa-twitter"></i></a>
+                </li>
+                <li>
+                  <a href="#"><i class="fa fa-google"></i></a>
+                </li>
+                <li>
+                  <a href="#"><i class="fa fa-instagram"></i></a>
+                </li>
+              </ul>
+              <p>Copyright © All Right Reserved</p>
+            </div>
+          </footer>
         </main>
         <!-- Page content end -->
       </div>
     </div>
+
     <!--Page loader DOM Elements. Requared all pages-->
     <div class="sweet-loader">
       <div class="box">
@@ -305,35 +254,65 @@
     <!-- Template global script file. requared all pages -->
     <script src="js/global.script.js"></script>
     <script>
-      $("#authBtn").click(function () {
-        var tmpWindow = window.open("about:blank");
-        tmpWindow.location = "https://testapi.openbanking.or.kr/oauth/2.0/authorize?response_type=code&client_id=6KySn1iYFgMX2t1HtlmXNltsVaMQ7uLouG7byIC5&redirect_uri=http://localhost:3000/authResult&scope=login inquiry transfer&state=12345678901234567890123456789012&auth_type=0" 
-               //# client id 바꿀 것
+      function getQueryStringObject() {
+        var a = window.location.search.substr(1).split("&");
+        if (a == "") return {};
+        var b = {};
+        for (var i = 0; i < a.length; ++i) {
+          var p = a[i].split("=", 2);
+          if (p.length == 1) b[p[0]] = "";
+          else b[p[0]] = decodeURIComponent(p[1].replace(/\+/g, " "));
+        }
+        return b;
+      }
+      var qs = getQueryStringObject();
+      var jwtToken = sessionStorage.getItem("ourToken");
+      console.log(qs, jwtToken);
+      $.ajax({
+        url: "/balance",
+        type: "POST",
+        headers: {
+          ourtoken: jwtToken,
+        },
+        //accessToken 아님!!!!!
+        data: {
+          fin_use_num: qs.fin_use_num,
+        },
+        //req.body.fin_use_num 추가해서 보내기
+        success: function (data) {
+          console.log("해당 계좌의 잔액은 :", data.balance_amt);
+          $("#balanceAmount").text(numberFormat(data.balance_amt) + "원");
+        },
       });
-      $("#signupBtn").click(function () {
-        var userName = $("#userName").val();
-        var userEmail = $("#userEmail").val();
-        var userPassword = $("#userPassword").val();
-        var userAccessToken = $("#userAccessToken").val();
-        var userRefreshToken = $("#userRefreshToken").val();
-        var userSeqNo = $("#userSeqNo").val();
-        $.ajax({
-                url:'/signup',
-                type : 'POST',
-                data : {
-                    userName: userName,
-                    userEmail: userEmail,
-                    userPassword: userPassword,
-                    userAccessToken: userAccessToken,
-                    userRefreshToken: userRefreshToken,
-                    userSeqNo: userSeqNo,
-                },
-                success:function(responseData){
-                  if(responseData == "1"){
-                    alert("가입 완료");
-                  }
-                }
-            })  
+      function numberFormat(inputNumber) {
+        return inputNumber.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+      }
+      $.ajax({
+        url: "/transactionlist",
+        type: "POST",
+        headers: {
+          ourtoken: jwtToken,
+        },
+        data: {
+          fin_use_num: qs.fin_use_num,
+        },
+        success: function (data) {
+          console.log(data);
+          for (var i = 0; i < data.res_list.length; i++) {
+            var element = data.res_list[i];
+            $("#transactionList").append(
+              "<tr><td>" +
+                (i + 1) +
+                "</td><td>" +
+                element.inout_type +
+                "</td><td>" +
+                element.print_content +
+                "</td><td>" +
+                element.tran_amt +
+                "</td></tr>"
+            );
+          }
+        },
       });
     </script>
   </body>
