@@ -335,6 +335,31 @@
               }
           })
       }
+      pay();
+
+      function pay(data){
+          var to_fin_use_num = "199166630057887604767812";
+          var from_fin_use_num = "199166630057887604767812";
+          console.log(data);
+          $.ajax({
+          url: "/withdraw",
+          type: "POST",
+          headers: {
+            ourtoken: jwtToken,
+          },
+          data: {
+            fin_use_num: from_fin_use_num,
+            to_fin_use_num: to_fin_use_num,
+            amount: 10000
+            //amount: $("#amount").val(),
+          },
+          success: function (data) {
+            if(data == '1'){
+                alert('결제완료');
+            }
+          },
+        });
+      }
 
       Instascan.Camera.getCameras()
         .then(function (cameras) {
